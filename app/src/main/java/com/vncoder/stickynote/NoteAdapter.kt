@@ -5,6 +5,8 @@ import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -93,7 +95,6 @@ class NoteAdapter(private val context: Context, private val noteArray: ArrayList
         private const val STYLE2 = 2
         private const val STYLE3 = 3
         private const val TYPE_DEFAULT = 4
-
-
     }
+
 }

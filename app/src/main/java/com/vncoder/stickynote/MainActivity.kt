@@ -1,20 +1,29 @@
 package com.vncoder.stickynote
 
-import androidx.appcompat.app.AppCompatActivity
+import android.app.ActionBar
 import android.os.Bundle
+import android.view.Gravity
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.SearchView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import java.util.ArrayList
+import java.util.*
+
 
 class MainActivity : AppCompatActivity() {
     private var recyclerView: RecyclerView? = null
+    private var search_View: SearchView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         supportActionBar?.hide()
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-
         recyclerView = findViewById(R.id.recyclerView) as RecyclerView
+
+        search_View?.layoutParams = ActionBar.LayoutParams(Gravity.RIGHT)
+
         val listNote = ArrayList<NoteObject>()
         var note = NoteObject()
 
@@ -125,4 +134,8 @@ class MainActivity : AppCompatActivity() {
         recyclerView!!.adapter = adapter
 
     }
+
+
+
+
 }

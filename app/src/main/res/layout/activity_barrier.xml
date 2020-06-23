@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <EditText
+        android:id="@+id/textView1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#EEEEEE"
+        android:text="TEXT_VIEW_1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/textView2"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#DDDDDD"
+        android:text="iện ích con sẽ có cùng kích thước như khi sử dụng quấn_content,
+         nhưng sẽ bị giới hạn bởi các ràng buộc (nghĩa là nó sẽ không mở rộng ra ngoài chúng)
+        và app:layout_constraintVertical_b"
+        app:layout_constraintLeft_toRightOf="@+id/textView1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/labelBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="textView1,textView2" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#CCCC00"
+        android:text="  cho app:layout_constraintWidth_default
+        (với chiều rộng được đặt thành 0dp ). Nếu được đặt,
+        tiện ích con sẽ có cùng kích thước như khi sử dụng quấn_content,
+         nhưng sẽ bị giới hạn bởi các ràng buộc (nghĩa là nó sẽ không mở rộng ra ngoài chúng)
+        và app:layout_constraintVertical_bias= .
+        Sử dụng thiên vị để kéo BigView xuống dưới cùng của cha mẹ."
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelBarrier" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
